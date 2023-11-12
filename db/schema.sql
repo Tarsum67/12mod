@@ -1,11 +1,12 @@
 DROP DATABASE IF EXISTS employment_db;
 CREATE DATABASE employment_db;
 USE employment_db;
--- Create a "departments" table to store department information
+
 CREATE TABLE department (
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(30) NOT NULL
 );
+
 CREATE TABLE role (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   title VARCHAR(30) NOT NULL,
@@ -15,6 +16,7 @@ CREATE TABLE role (
   REFERENCES department(id)
   ON DELETE SET NULL
 );
+
 CREATE TABLE employees (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(16) NOT NULL,
